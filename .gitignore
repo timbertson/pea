@@ -1,0 +1,4 @@
+.tags
+*.pyc
+*.egg-info
+0inst
