@@ -6,7 +6,7 @@ setup(
 	version='0.1',
 	author_email='tim3d.junk+pea@gmail.com',
 	author='Tim Cuthbertson',
-	url='http://github.com/gfxmonk/python-pea/tree',
+	url='http://github.com/gfxmonk/pea/tree',
 	description="minimal BDD library",
 	packages = find_packages(),
 	entry_points = {
@@ -23,6 +23,6 @@ setup(
 	keywords='test nosetests nose nosetest bdd cucumber lettuce',
 	install_requires=[
 		'setuptools',
-		'termstyle',
+		'python-termstyle',
 	],
 )
