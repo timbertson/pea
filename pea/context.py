@@ -54,8 +54,3 @@ def step(func):
 	setattr(steps, func.__name__, lambda prefix: PeaFormatter.with_formatting(prefix, func))
 	return func
 
-# import all_steps as a shortcut, if it exists
-try:
-	import all_steps
-except ImportError:
-	pass
