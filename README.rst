@@ -17,16 +17,19 @@ Benefits of ``pea`` over ``lettuce``, ``cucumber``, etc:
 
 - It's a really trivial library (thus the name). It doesn't do very much,
   so it probably doesn't have many bugs
+  
 - Your features are just python code:
-   - No "BDD language parser" needed
-   - No regular expressions
-   - Stack traces make sense
-   - Syntax highlighting
-   - You can use `ctags`_ to jump between test & implementation, as well as
-     for method completion
-   - Managing and renaming functions is much easier than managing regexes
-   - You can use whatever abstractions you like
-   - You can use rich python objects as arguments, instead of parsing strings
+  
+  - No "BDD language parser" needed
+  - No regular expressions
+  - Stack traces make sense
+  - Syntax highlighting
+  - You can use `ctags`_ to jump between test & implementation, as well as
+    for method completion
+  - Managing and renaming functions is much easier than managing regexes
+  - You can use whatever abstractions you like
+  - You can use rich python objects as arguments, instead of parsing strings
+     
 - It doesn't need its own test runner; so you can just use `nose`_ to run it
   alongside your unit tests
 
