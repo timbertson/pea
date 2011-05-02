@@ -1,6 +1,6 @@
-<?xml version="1.0" ?>
+<?xml version="1.0"?>
 <?xml-stylesheet type='text/xsl' href='interface.xsl'?>
-<interface uri="http://gfxmonk.net/dist/0install/python-pea.xml" xmlns="http://zero-install.sourceforge.net/2004/injector/interface">
+<interface xmlns="http://zero-install.sourceforge.net/2004/injector/interface" uri="http://gfxmonk.net/dist/0install/python-pea.xml">
 	<name>python-pea</name>
 	<summary>minimal BDD library for python</summary>
 	<description>
@@ -26,7 +26,7 @@ Benefits of ``pea`` over ``lettuce``, ``cucumber``, etc:
   
 - Your features are just python code:
   
-  - No &quot;BDD language parser&quot; needed
+  - No "BDD language parser" needed
   - No regular expressions
   - Stack traces make sense
   - Syntax highlighting
@@ -107,42 +107,40 @@ Pea works well with `rednose`_
 	</description>
 	<rich-description xmlns="http://gfxmonk.net/dist/0install">
 		<div xmlns="http://www.w3.org/1999/xhtml">
-			<div id="pea---the-tiniest-green-vegetable.">
-				<h1>pea - The tiniest green vegetable.</h1>
-				<p><strong>pea</strong> is a minimal BDD framework for python, in the style of ruby's <a href="http://cukes.info/">cucumber</a> and python's <a href="https://github.com/gabrielfalcao/lettuce/">lettuce</a>. It aims to help you write the same kind of tests - but in straight-up python code, without all the parsing and indirection and other hoops to jump through. It's a lot like ruby's <a href="https://github.com/elight/coulda">coulda</a>.</p>
-				<p>Benefits of cucumber-style testing include:</p>
-				<ul>
-					<li>You write your tests in clear, english language without inline code</li>
-					<li>Your tests are human-readable, and hopefully human-editable</li>
-					<li>You can re-use steps with confidence, because they all do exactly what they say on the tin</li>
-				</ul>
-				<p>Benefits of <code>pea</code> over <code>lettuce</code>, <code>cucumber</code>, etc:</p>
-				<ul>
-					<li>
-						<p>It's a really trivial library (thus the name). It doesn't do very much, so it probably doesn't have many bugs</p>
-					</li>
-					<li>
-						<p>Your features are just python code:</p>
-						<ul>
-							<li>No &quot;BDD language parser&quot; needed</li>
-							<li>No regular expressions</li>
-							<li>Stack traces make sense</li>
-							<li>Syntax highlighting</li>
-							<li>You can use <a href="http://ctags.sourceforge.net/">ctags</a> to jump between test &amp; implementation, as well as for method completion</li>
-							<li>Managing and renaming functions is much easier than managing regexes</li>
-							<li>You can use whatever abstractions you like</li>
-							<li>You can use rich python objects as arguments, instead of parsing strings</li>
-						</ul>
-					</li>
-					<li>
-						<p>It doesn't need its own test runner; so you can just use <a href="http://somethingaboutorange.com/mrl/projects/nose/1.0.0/">nose</a> to run it alongside your unit tests</p>
-					</li>
-				</ul>
-			</div>
-			<div id="so-how-do-i-use-it">
-				<h1>So how do I use it?</h1>
-				<p>Here's a minimal example:</p>
-				<pre><code>from pea import *
+			<h1 id="pea---the-tiniest-green-vegetable.">pea - The tiniest green vegetable.</h1>
+			<p><strong>pea</strong> is a minimal BDD framework for python, in the style of ruby's <a href="http://cukes.info/">cucumber</a> and python's <a href="https://github.com/gabrielfalcao/lettuce/">lettuce</a>. It aims to help you write the same kind of tests - but in straight-up python code, without all the parsing and indirection and other hoops to jump through. It's a lot like ruby's <a href="https://github.com/elight/coulda">coulda</a>.</p>
+			<p>Benefits of cucumber-style testing include:</p>
+			<ul>
+				<li>You write your tests in clear, english language without inline code</li>
+				<li>Your tests are human-readable, and hopefully human-editable</li>
+				<li>You can re-use steps with confidence, because they all do exactly what they say on the tin</li>
+			</ul>
+			<p>Benefits of <code>pea</code> over <code>lettuce</code>, <code>cucumber</code>, etc:</p>
+			<ul>
+				<li>
+					<p>It's a really trivial library (thus the name). It doesn't do very much, so it probably doesn't have many bugs</p>
+				</li>
+				<li>
+					<p>Your features are just python code:</p>
+					<ul>
+						<li>No "BDD language parser" needed</li>
+						<li>No regular expressions</li>
+						<li>Stack traces make sense</li>
+						<li>Syntax highlighting</li>
+						<li>You can use <a href="http://ctags.sourceforge.net/">ctags</a> to jump between test &amp; implementation, as well as for method completion</li>
+						<li>Managing and renaming functions is much easier than managing regexes</li>
+						<li>You can use whatever abstractions you like</li>
+						<li>You can use rich python objects as arguments, instead of parsing strings</li>
+					</ul>
+				</li>
+				<li>
+					<p>It doesn't need its own test runner; so you can just use <a href="http://somethingaboutorange.com/mrl/projects/nose/1.0.0/">nose</a> to run it alongside your unit tests</p>
+				</li>
+			</ul>
+			<h1 id="so-how-do-i-use-it">So how do I use it?</h1>
+			<p>Here's a minimal example:</p>
+			<pre>
+				<code>from pea import *
 
 @step
 def I_go_to_the_store():
@@ -171,33 +169,29 @@ class TestShopping(TestCase):
         When.I_buy_some('peas')
         And.I_go_home()
         Then.I_have_some_delicious('peas')
-</code></pre>
-				<p>... and when you run it (with nosetests, in verbose mode):</p>
-				<img alt="image" src="http://gfxmonk.net/dist/0install/pea/screenshot.png"/>
-				<p>Typically you would put your steps in a separate python module (or many), but it's your choice.</p>
-				<div id="basics:">
-					<h2>Basics:</h2>
-					<ul>
-						<li><code>@step</code> adds your function to pea's registry of steps, which allows them to be called via <code>Given</code>, <code>When</code>, <code>And</code>, and <code>Then</code>.</li>
-						<li>To re-use a step from inside another step, just call the function!</li>
-					</ul>
-				</div>
-				<div id="stuff-to-remember:">
-					<h2>Stuff to remember:</h2>
-					<ul>
-						<li>Make sure you inherit from <code>pea.TestCase</code> (and call <code>super</code> from <code>setUp</code>/<code>tearDown</code>), as it takes care of resetting the <code>world</code> between tests.</li>
-						<li>You can use <code>TestCase</code> assertion methods on the world, too<ul><li>e.g. <code>world.assertEquals(expected, actual)</code></li></ul></li>
-					</ul>
-					<p>Pea works well with <a href="https://github.com/gfxmonk/rednose/tree">rednose</a></p>
-				</div>
-			</div>
+</code>
+			</pre>
+			<p>... and when you run it (with nosetests, in verbose mode):</p>
+			<img alt="image" src="http://gfxmonk.net/dist/0install/pea/screenshot.png"/>
+			<p>Typically you would put your steps in a separate python module (or many), but it's your choice.</p>
+			<h2 id="basics">Basics:</h2>
+			<ul>
+				<li><code>@step</code> adds your function to pea's registry of steps, which allows them to be called via <code>Given</code>, <code>When</code>, <code>And</code>, and <code>Then</code>.</li>
+				<li>To re-use a step from inside another step, just call the function!</li>
+			</ul>
+			<h2 id="stuff-to-remember">Stuff to remember:</h2>
+			<ul>
+				<li>Make sure you inherit from <code>pea.TestCase</code> (and call <code>super</code> from <code>setUp</code>/<code>tearDown</code>), as it takes care of resetting the <code>world</code> between tests.</li>
+				<li>You can use <code>TestCase</code> assertion methods on the world, too<ul><li>e.g. <code>world.assertEquals(expected, actual)</code></li></ul></li>
+			</ul>
+			<p>Pea works well with <a href="https://github.com/gfxmonk/rednose/tree">rednose</a></p>
 		</div>
 	</rich-description>
 	<group>
 		<command name="run">
 			<runner interface="http://gfxmonk.net/dist/0install/nosetests-plugin-resolver.xml"/>
 		</command>
-		<command name="test" path='.'>
+		<command name="test" path=".">
 			<requires interface="http://gfxmonk.net/dist/0install/rednose.xml"/>
 			<runner interface="http://gfxmonk.net/dist/0install/nosetests-plugin-resolver.xml"/>
 		</command>
@@ -206,6 +200,10 @@ class TestShopping(TestCase):
 		<implementation id="sha1new=eef73fda258ffb1f76588ba12aae6bee0812e355" released="2011-01-30" version="0.1">
 			<manifest-digest sha256="4d18a8e38749b3f4b3a9ad5f217ae69233864f331f650ae8e583e86fa7a0af1f"/>
 			<archive href="http://gfxmonk.net/dist/0install/python-pea/python-pea-0.1.tgz" size="4370"/>
+		</implementation>
+		<implementation id="sha1new=ebfcaa607f3568d3f9d852462e99f2245bedacac" released="2011-05-02" version="0.1.1">
+			<manifest-digest sha256="f0f0ecc66b9bac2121e732f1c8151e82c1455cf71f3a4c8b564911ecd8005c6a"/>
+			<archive href="http://gfxmonk.net/dist/0install/python-pea/python-pea-0.1.1.tgz" size="4410"/>
 		</implementation>
 	</group>
 </interface>
