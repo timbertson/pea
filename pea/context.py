@@ -21,6 +21,9 @@ class Object(object): pass
 class World(unittest.TestCase):
 	def __init__(self):
 		self._reset()
+		super(World, self).__init__('_world')
+	
+	def _world(self): pass
 
 	def __getattr__(self, a):
 		return getattr(self._current, a)
