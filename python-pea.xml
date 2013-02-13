@@ -189,12 +189,15 @@ class TestShopping(TestCase):
 	</rich-description>
 	<group>
 		<command name="run">
-			<runner interface="http://gfxmonk.net/dist/0install/nosetests-plugin-resolver.xml"/>
+			<runner interface="http://gfxmonk.net/dist/0install/nosetests-runner.xml" command="core"/>
 		</command>
 		<command name="test" path=".">
 			<requires interface="http://gfxmonk.net/dist/0install/rednose.xml"/>
-			<runner interface="http://gfxmonk.net/dist/0install/nosetests-plugin-resolver.xml"/>
+			<runner interface="http://gfxmonk.net/dist/0install/nosetests-runner.xml" command="core">
+				<executable-in-path name="nosetests"/>
+			</runner>
 		</command>
+		<requires interface="http://gfxmonk.net/dist/0install/python-termstyle.xml"/>
 		<environment mode="prepend" name="NOSETESTS_PLUGINS" value="pea/PeaFormatter"/>
 		<environment insert="" mode="prepend" name="PYTHONPATH"/>
 		<implementation id="sha1new=eef73fda258ffb1f76588ba12aae6bee0812e355" released="2011-01-30" version="0.1">

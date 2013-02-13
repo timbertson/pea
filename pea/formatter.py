@@ -27,8 +27,8 @@ class PeaFormatter(nose.plugins.Plugin):
 	def configure(self, options, conf):
 		self.enabled = options.verbosity >= 2
 		if not self.enabled: return
-		color = getattr(options, 'color', True)
-		force_color = getattr(options, 'force_color', False)
+		color = getattr(options, 'rednose', True)
+		force_color = getattr(options, 'rednose_color', 'auto') == 'force'
 		if color:
 			try:
 				(termstyle.enable if force_color else termstyle.auto)()
