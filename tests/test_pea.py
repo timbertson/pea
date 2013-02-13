@@ -1,3 +1,4 @@
+from __future__ import print_function
 from pea import *
 
 FEATURE_FILE="""
@@ -48,7 +49,7 @@ def I_have_defined_steps(contents):
 def I_run_nosetests(*args):
 	p = subprocess.Popen(['nosetests'] + list(args), stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
 	stdout, _ = p.communicate()
-	world.nose_output = stdout
+	world.nose_output = stdout.decode('utf-8')
 	world.nose_success = p.returncode == 0
 
 @step
@@ -63,7 +64,7 @@ def the_output_should_be(expected, ignoring_summary=True):
 	try:
 		world.assertEquals(actual, expected)
 	except AssertionError:
-		print actual
+		print(actual)
 		raise
 
 @step

@@ -1,3 +1,4 @@
+from __future__ import absolute_import
 __all__ = [
 	'step',
 	'steps',
@@ -9,7 +10,7 @@ __all__ = [
 	'And',
 	]
 
-from formatter import PeaFormatter
+from .formatter import PeaFormatter
 import unittest
 class StepCollection(object):
 	def __setattr__(self, attr, val):

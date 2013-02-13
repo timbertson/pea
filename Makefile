@@ -13,3 +13,5 @@ test: python-pea-local.xml
 test-all: python-pea-local.xml
 	0test python-pea-local.xml http://repo.roscidus.com/python/python 2.6,2.8 3.0,4
 
+test-py3: python-pea-local.xml
+	0test python-pea-local.xml http://repo.roscidus.com/python/python 3.0,4
