@@ -77,7 +77,7 @@ Here's a minimal example::
 
 ... and when you run it (with nosetests, in verbose mode):
 
-.. image:: http://gfxmonk.net/dist/0install/pea/screenshot.png
+.. image:: http://gfxmonk.net/dist/0install/impl/pea/screenshot.png
 
 Typically you would put your steps in a separate python module (or many),
 but it's your choice.
@@ -172,7 +172,7 @@ class TestShopping(TestCase):
 </code>
 			</pre>
 			<p>... and when you run it (with nosetests, in verbose mode):</p>
-			<img alt="image" src="http://gfxmonk.net/dist/0install/pea/screenshot.png"/>
+			<img alt="image" src="http://gfxmonk.net/dist/0install/impl/pea/screenshot.png"/>
 			<p>Typically you would put your steps in a separate python module (or many), but it's your choice.</p>
 			<h2 id="basics">Basics:</h2>
 			<ul>
@@ -202,11 +202,11 @@ class TestShopping(TestCase):
 		<environment insert="" mode="prepend" name="PYTHONPATH"/>
 		<implementation id="sha1new=eef73fda258ffb1f76588ba12aae6bee0812e355" released="2011-01-30" version="0.1">
 			<manifest-digest sha256="4d18a8e38749b3f4b3a9ad5f217ae69233864f331f650ae8e583e86fa7a0af1f"/>
-			<archive href="http://gfxmonk.net/dist/0install/python-pea/python-pea-0.1.tgz" size="4370"/>
+			<archive href="http://gfxmonk.net/dist/0install/impl/python-pea/python-pea-0.1.tgz" size="4370"/>
 		</implementation>
 		<implementation id="sha1new=ebfcaa607f3568d3f9d852462e99f2245bedacac" released="2011-05-02" version="0.1.1">
 			<manifest-digest sha256="f0f0ecc66b9bac2121e732f1c8151e82c1455cf71f3a4c8b564911ecd8005c6a"/>
-			<archive href="http://gfxmonk.net/dist/0install/python-pea/python-pea-0.1.1.tgz" size="4410"/>
+			<archive href="http://gfxmonk.net/dist/0install/impl/python-pea/python-pea-0.1.1.tgz" size="4410"/>
 		</implementation>
 	</group>
 </interface>

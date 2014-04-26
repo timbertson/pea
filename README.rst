@@ -71,7 +71,7 @@ Here's a minimal example::
 
 ... and when you run it (with nosetests, in verbose mode):
 
-.. image:: http://gfxmonk.net/dist/0install/pea/screenshot.png
+.. image:: http://gfxmonk.net/dist/0install/impl/pea/screenshot.png
 
 Typically you would put your steps in a separate python module (or many),
 but it's your choice.
