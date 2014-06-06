@@ -23,6 +23,7 @@ setup(
 	keywords='test nosetests nose nosetest bdd cucumber lettuce',
 	install_requires=[
 		'setuptools',
+		'nose',
 		'python-termstyle',
 	],
 )
