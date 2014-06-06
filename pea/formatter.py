@@ -43,16 +43,16 @@ class PeaFormatter(nose.plugins.Plugin):
 	
 	def afterTest(self, test):
 		if self.enabled and self._newtest is False:
-			print >> self.stream, ""
+			print("", file=self.stream)
 
 	@classmethod
 	def with_formatting(cls, prefix, func):
 		def prn(s):
 			if cls.instance and cls.instance.enabled:
 				if cls._newtest:
-					print >> cls.stream, ""
+					print("", file=cls.stream)
 					cls._newtest = False
-				print >> cls.stream, s
+				print(s, file=cls.stream)
 
 		@functools.wraps(func)
 		def nice_repr(obj):
