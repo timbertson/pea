@@ -4,6 +4,11 @@ import sys
 import nose
 import functools
 import termstyle
+try:
+	import colorama
+	import colorama.initialise
+except ImportError:
+	colorama = None
 
 failure = 'FAILED'
 error = 'ERROR'
@@ -23,6 +28,8 @@ class PeaFormatter(nose.plugins.Plugin):
 		type(self).instance = self
 
 	def setOutputStream(self, stream):
+		if colorama:
+			stream = colorama.initialise.wrap_stream(stream, True, False, False, True)
 		type(self).stream = stream
 
 	def configure(self, options, conf):
