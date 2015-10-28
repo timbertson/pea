@@ -10,11 +10,6 @@ try:
 except ImportError:
 	colorama = None
 
-failure = 'FAILED'
-error = 'ERROR'
-success = 'passed'
-skip = 'skipped'
-line_length = 77
 
 class PeaFormatter(nose.plugins.Plugin):
 	name = 'pea'
@@ -29,7 +24,12 @@ class PeaFormatter(nose.plugins.Plugin):
 
 	def setOutputStream(self, stream):
 		if colorama:
-			stream = colorama.initialise.wrap_stream(stream, True, False, False, True)
+			stream = colorama.initialise.wrap_stream(stream,
+				convert=True,
+				strip=False,
+				autoreset=False,
+				wrap=True
+			)
 		type(self).stream = stream
 
 	def configure(self, options, conf):
