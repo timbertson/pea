@@ -1,6 +1,8 @@
 pea - The tiniest green vegetable.
 -------------------------------------
 
+.. image:: http://gfxmonk.net/dist/status/project/pea.png
+
 **pea** is a minimal BDD framework for python, in the style of ruby's `cucumber`_ and
 python's `lettuce`_. It aims to help you write the same kind of tests - but in straight-up
 python code, without all the parsing and indirection and other hoops to jump through. It's
